@@ -3,10 +3,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
-
-
-  def create
-    @comment = current_user.comments.new topic_params
+def create
+    @comment = current_user.comments.new
     if @comment.save
       redirect_to topics_path, success: '投稿に成功しました'
     else
@@ -14,10 +12,5 @@ class CommentsController < ApplicationController
       logger.debug(@comment.inspect)
       render :new
     end
-  end
-
-  private
-    def topic_params
-      params.require(:comment).permit(:image, :description)
-    end
+end
 end

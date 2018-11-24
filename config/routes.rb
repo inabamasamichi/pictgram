@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+
+  get "/topics/my_index",to: "topics#my_index",as: "my_topics"
   resources :users
   resources :topics
 
@@ -18,4 +20,5 @@ Rails.application.routes.draw do
 
   get 'comments/index'
   post '/comments', to: 'comments#create'
+
 end

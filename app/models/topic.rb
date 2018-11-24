@@ -12,4 +12,6 @@ class Topic < ApplicationRecord
 
   has_many :comments
   
+  has_many :ownposts
+
 end
