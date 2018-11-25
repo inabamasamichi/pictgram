@@ -13,15 +13,13 @@
               <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
               <% end %>
             <% end %>
-            <%= link_to new_comment_path, method: :get do %>
+            <%= link_to new_comment_path(topic_id: topic.id), method: :get do %>
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
             <% end %>
             <p class="topic-text">
               <%= topic.description %>
             </p>
-            <h1 class="comment">コメント</h1>
-            <p class='comment-text'</p>
-            
+            <p class="form-group">コメント</p>
           </div>
         </div>
       </div>
