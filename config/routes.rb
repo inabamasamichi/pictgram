@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   get 'comments/index'
   post '/comments', to: 'comments#create'
 
+  get 'terms/index'
+
 end

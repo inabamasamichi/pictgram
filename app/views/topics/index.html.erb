@@ -17,9 +17,11 @@
             <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
             <% end %>
             <p class="topic-text">
-              <%= topic.description %>
-            </p>
-            <p class="form-group">コメント</p>
+              <%= topic.description %></p>
+            <% topic.comments.each do |comment| %>
+              <p class="topic-text">
+                <%= comment.content %></p>
+            <% end %>
           </div>
         </div>
       </div>

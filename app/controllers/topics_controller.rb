@@ -3,7 +3,7 @@ class TopicsController < ApplicationController
     @ownpost_topics = current_user.topics
   end
   def index
-    @topics = Topic.all.includes(:favorite_users)
+    @topics = Topic.all.includes([:favorite_users,:comment_users]).order(id: :desc)
   end
 
   def new
@@ -21,10 +21,8 @@ class TopicsController < ApplicationController
   end
 
 
-
-
   private
     def topic_params
-      params.require(:topic).permit(:image, :description)
+      params.require(:topic).permit(:image, :description,:contet,)
     end
 end
